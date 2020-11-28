@@ -6,31 +6,33 @@ const routes = [
     {
       path: "/user",
       //component: RenderRouterView,
-      component: () => 
-      import(/* webpackChunkName: "layout" */ ""),
+      component: () => import(/* webpackChunkName: "layout" */ "./Layout/UserLayout"),
       children: [
-          {
-            path: '/user',
-            redirect: '/user/login'
-          },
           {
               path: "/user/login",
               name: "login",
               component: () =>
-                  import(/* webpackChunkName: "user" */ "")
+                  import(/* webpackChunkName: "user" */ "./view/user/Login")
           },
           {
               path: "/user/register",
               name: "login",
               component: () =>
-                  import(/* webpackChunkName: "user" */ "")
+                  import(/* webpackChunkName: "user" */ "./view/user/Register")
           },
+          {
+              path: "/user/myspace",
+              componemt: () => import(/* webpackChunkName: "user" */ "./view/user/Myspace"),
+              children: [
+                  
+              ]
+          }
       ]
     },
     {
       path: "/home",
       component: () => 
-      import(/* webpackChunkName: "layout" */ ""),
+      import(/* webpackChunkName: "layout" */ "./Layout/HomeLayout"),
       children:[
           {
             path: "home",
@@ -39,18 +41,18 @@ const routes = [
           {
               path: "/home/bangumi",
               name: "bangumi",
-              component: () => import()
-          }
+              component: () => import(/* webpackChunkName: "user" */ "./view/home/Bangumi")
+          },
           {
             path: "/home/discuss",
             name: "discuss",
-            component: () => import()
+            component: () => import(/* webpackChunkName: "user" */ "./view/home/Discuss")
           },
         {
         path: "/home/bgm/:id",
         name: "bgm",
         component: () => 
-            import()
+            import(/* webpackChunkName: "user" */ "./view/home/Bgm")
 
         },
       ]
@@ -58,37 +60,42 @@ const routes = [
     {
         path: "/dashtable",
         name: "dashtable",
-        componemt: () => import(),
+        componemt: () => import(/* webpackChunkName: "layout" */ "./Layout/Dashtable"),
         children:[
             {
                 path:"/dashtable/bgm",
                 name: "dt-bgm",
-                component: () => import()
+                component: () => import(/* webpackChunkName: "user" */ "./view/dashtable/Bgm")
             },
             {
                 path: "dashtable/discuss",
                 name: "dt-dis",
-                component: () => import()
+                component: () => import(/* webpackChunkName: "user" */ "./view/dashtable/Discuss")
             },
             {
                 path: "/dashtable/user",
                 name: "dt-user",
-                componemt: () => import()
+                componemt: () => import(/* webpackChunkName: "user" */ "./view/dashtable/User")
             }
         ]
     },
     {
       path: "*",
       name: "404",
-      component: NotFound
+      component: () => 
+        import(/* webpackChunkName: "user" */ "./view/404")
         
     },
     {
       path: "/about",
       name: "About",
       component: () =>
-        import(/* webpackChunkName: "about" */ "")
+        import(/* webpackChunkName: "about" */ "./view/About")
     },
+    {
+        path: "/",
+        redirect: "/home/bangumi"
+    }
     
   ];
   
