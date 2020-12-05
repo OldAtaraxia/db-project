@@ -14,7 +14,7 @@ const models = TypegooseModule.forFeature([User])
       useUnifiedTopology: true,
       useFindAndModify: false,
     }),
-    models
+    models,
   ],
   providers: [DbService],
   exports: [DbService, models],
