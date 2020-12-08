@@ -1,4 +1,5 @@
-import { modelOptions, prop } from "@typegoose/typegoose";
+import { modelOptions, prop, Ref } from "@typegoose/typegoose";
+import { Anime } from './anime.model'
 
 @modelOptions({
     schemaOptions: {
@@ -11,4 +12,9 @@ export class Episode{
 
     @prop()
     file: string
+
+    @prop({ref: 'Anime'})
+    anime: Ref<Anime>
+
+
 }

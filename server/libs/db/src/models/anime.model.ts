@@ -7,6 +7,7 @@ import { Episode } from './episode.model'
         timestamps: true //给模型加上字段:创建时间和更新时间
     }
 })
+
 export class Anime{
     @prop()
     title: string
@@ -14,7 +15,4 @@ export class Anime{
     @prop()
     cover: string    
 
-    //数组Prop个参考
-    @prop({itemsRef: 'Episode'})
-    episodes: Ref<Episode>
 }
