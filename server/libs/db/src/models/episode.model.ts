@@ -13,8 +13,11 @@ export class Episode{
     @prop()
     file: string
 
-    @prop({ref: 'Anime'})
-    anime: Ref<Anime>
+    @prop()
+    animeId: string
+
+    @prop()
+    order: number
 
 
 }

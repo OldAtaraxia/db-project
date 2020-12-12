@@ -6,6 +6,8 @@ import VideoList from '../views/videos/VideoList.vue'
 import VideoEdit from '../views/videos/VideoEdit.vue'
 import UserList from '../views/users/UserList.vue'
 import UserEdit from '../views/users/UserEdit.vue'
+import EpisodeEdit from '../views/episodes/EpisodeEdit.vue'
+import EpisodeList from '../views/episodes/EpisodeList.vue'
 
 
 Vue.use(VueRouter)
@@ -21,6 +23,12 @@ const routes: RouteConfig[] = [
         component: Home
       },
       {
+        name: 'video-episodes',
+        path: 'videos/episodes/:id',
+        component: EpisodeList
+      },
+      
+      {
         name: 'videos-list',
         path: '/videos/list',
         component: VideoList
@@ -29,6 +37,12 @@ const routes: RouteConfig[] = [
         name: 'videos-edit',
         path: '/videos/edit/:id',
         component: VideoEdit,
+        props: true
+      },
+      {
+        name: 'videos-edit-create',
+        path: '/videos/edit/create/:id',
+        component: EpisodeEdit,
         props: true
       },
       {
@@ -51,6 +65,22 @@ const routes: RouteConfig[] = [
         name: 'users-create',
         path: '/users/create',
         component: UserEdit
+      },
+      {
+        name: 'episodes-list',
+        path: '/episodes/list',
+        component: EpisodeList
+      },
+      {
+        name: 'episodes-edit',
+        path: '/episodes/edit/:id',
+        component: EpisodeEdit,
+        props: true
+      },
+      {
+        name: 'episodes-create',
+        path: '/episodes/create',
+        component: EpisodeEdit
       }
     ]
   },

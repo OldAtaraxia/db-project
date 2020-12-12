@@ -32,6 +32,7 @@ export default class UserEdit extends Vue {
         const method = this.isNew ? `post` : `put`
         await this.$http[method](url,data);
         this.$message.success('保存成功')
+        console.log(data)
         this.data = {}
         this.$router.go(-1)
     }

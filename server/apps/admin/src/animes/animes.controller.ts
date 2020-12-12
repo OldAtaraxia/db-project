@@ -14,5 +14,5 @@ import { ReturnModelType } from '@typegoose/typegoose'
 export class AnimesController {
     constructor(
         @InjectModel(Anime) private readonly model: ReturnModelType<typeof Anime>
-    ){ }
+    ){}
 }

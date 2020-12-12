@@ -14,5 +14,6 @@ export class Anime{
     //封面图
     @prop()
     cover: string    
-
+    @prop()
+    episodeNumber: number
 }

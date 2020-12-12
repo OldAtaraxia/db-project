@@ -15,6 +15,7 @@
     "vue-class-component": "^7.2.3",
     "vue-ele-form": "^0.8.55",
     "vue-ele-form-image-uploader": "^0.1.8",
+    "vue-ele-form-video-uploader": "^0.1.4",
     "vue-property-decorator": "^8.4.2",
     "vue-router": "^3.2.0"
   },

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3>视频列表</h3>
+        <h3>番剧列表</h3>
         <div>
             <el-button type="success" size="default" @click="$router.push('/videos/create')">上传</el-button>
             
@@ -16,7 +16,7 @@
                     label="操作"
                     :width="200">
                     <template v-slot="{row}">
-                        <el-button type="success" size="mini" @click="$router.push(`/videos/edit/${row._id}`)">编辑</el-button>
+                        <el-button type="primary" size="mini" @click="$router.push(`/videos/edit/${row._id}`)">编辑</el-button>
                         <el-button type="danger" size="mini" @click="remove(row)">删除</el-button>
                     </template>
                 </el-table-column>
@@ -49,7 +49,7 @@ export default class VideoList extends Vue {
     fields = {
         _id: {label: 'ID'},
         title: {label: '标题'},
-        cover: {label: '封面图'},
+        cover: {label: '封面图地址'},
     }
 
     query = {
