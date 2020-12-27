@@ -30,7 +30,7 @@ Vue.component('video-uploader', EleFormVideoUploader)
 
 
 Vue.prototype.$http=axios.create({
-  baseURL: 'http://localhost:3000'
+  baseURL: 'http://localhost:3009'
 })
 
 new Vue({

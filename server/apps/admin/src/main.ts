@@ -10,14 +10,14 @@ async function bootstrap() {
     prefix: '/uploads'
   })
   const options = new DocumentBuilder()
-    .setTitle('后台管理api文档')
-    .setDescription('后台用的服务端api')
+    .setTitle('api文档')
+    .setDescription('服务端api')
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api-docs', app, document);
 
-  await app.listen(3000);
-  console.log('http://localhost:3000')
+  await app.listen(3009);
+  console.log('http://localhost:3009')
 }
 bootstrap();

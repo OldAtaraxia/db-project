@@ -48,7 +48,7 @@ export default class VideoEdit extends Vue {
             label: '封面图', 
             type: "image-uploader",
             attrs: {
-                action: 'http://localhost:3000/upload',
+                action: 'http://localhost:3009/upload',
                 responseFn (response) {
                     console.log(response.url);
                     return response.url;

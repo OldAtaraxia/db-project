@@ -1,4 +1,5 @@
 import { modelOptions, prop } from '@typegoose/typegoose'
+import { hashSync } from 'bcryptjs'
 
 
 @modelOptions({
@@ -9,6 +10,14 @@ import { modelOptions, prop } from '@typegoose/typegoose'
 export class User{
     @prop()
     username: string
-    @prop()
+    @prop({
+        select: false,
+        get(val){
+            return val
+        },
+        set(val){
+            return val ? hashSync(val) : val
+        }
+    })
     password: string    
 }

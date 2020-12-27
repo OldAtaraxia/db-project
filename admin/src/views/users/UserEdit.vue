@@ -7,6 +7,9 @@
             :request-fn="submit"
         ></ele-form>
         
+        <el-button type="danger" size="default" >禁言该用户</el-button>
+       
+        
     </div>
     
 </template>

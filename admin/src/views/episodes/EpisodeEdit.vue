@@ -27,7 +27,7 @@ export default class EpisodeEdit extends Vue {
             label: '资源地址',
             type: 'video-uploader',
             attrs: {
-                action: 'http://localhost:3000/upload', // 上传地址
+                action: 'http://localhost:3009/upload', // 上传地址
                 responseFn (response) {
                     console.log(response.url);
                     return response.url;
